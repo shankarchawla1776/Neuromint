@@ -25,7 +25,7 @@ test_df = pd.DataFrame({
 
 
 
-def wave_class(data=None, wave_lengths=None, velocities=None, frequencies=None, return_extreme=None, wave_type=None): 
+def wave_class(data=None, wave_lengths=None, velocities=None, frequencies=None, return_extreme=None): 
     
     wave_ranges = {
         (0.1, 3.5): "Delta",
@@ -65,4 +65,12 @@ def wave_class(data=None, wave_lengths=None, velocities=None, frequencies=None, 
         return data, extreme_df_low.sort_values(by='Frequency(Hz)', ascending=False), extreme_df_high.sort_values(by='Frequency(Hz)', ascending=False)
     else: return data
         
-print(wave_class(data=fake_df, wave_lengths=fake_df["Lambda"], velocities=fake_df["Velocity"], return_extreme = True))
+wave_class_res_no_ext = wave_class(data=fake_df, wave_lengths=fake_df["Lambda"], velocities=fake_df["Velocity"], return_extreme = False)
+print(wave_class_res_no_ext)
+
+wave_class_res_no_ext.to_csv('wave_class_res.csv', index=False)
+
+wave_class_res_w_ext = wave_class(data=fake_df, wave_lengths=fake_df["Lambda"], velocities=fake_df["Velocity"], return_extreme = True)
+
+wave_class_res_w_ext.to_csv('wave_class_res_w_ext.csv', index=False)
+
