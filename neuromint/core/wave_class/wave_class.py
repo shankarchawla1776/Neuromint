@@ -1,32 +1,6 @@
 import numpy as np
 import pandas as pd
 
-df = pd.DataFrame({
-    'Lambda': [1, 2, 3, 4, 5],
-    'Velocity': [10, 20, 30, 40, 50]
-})
-
-np.random.seed(42) 
-fake_df = pd.DataFrame({
-    'Lambda': np.random.uniform(1, 30, 101),  # Random wavelengths between 1 and 30
-    'Frequency': np.random.uniform(1, 30, 101),  # Random wavelengths between 1 and 30
-    'Velocity': np.random.uniform(5, 50, 101)   # Random velocities between 5 and 50
-    
-})
-
-fake_df_2 = pd.DataFrame({
-    'Frequency': np.random.uniform(1, 30, 101),  # Random wavelengths between 1 and 30
-    'Velocity': np.random.uniform(5, 50, 101)   # Random velocities between 5 and 50
-})
-
-test_df = pd.DataFrame({
-    'Lambda': [1, 2, 3, 4, 5],
-    'Velocity': [10, 20, 30, 40, 50],
-    'Frequency': [1, 1, 1, 1, 1]  # Frequencies already listed for testing
-})
-
-
-
 def wave_class(data=None, wave_lengths=None, velocities=None, frequencies=None, return_extreme=None, return_csv=None): 
     
     wave_ranges = {
@@ -75,15 +49,3 @@ def wave_class(data=None, wave_lengths=None, velocities=None, frequencies=None, 
         return data 
     
 
-
-# wave_class_res_no_ext = wave_class(data=fake_df, wave_lengths=fake_df["Lambda"], velocities=fake_df["Velocity"], return_extreme = True)
-# print(wave_class_res_no_ext)
-
-# wave_class_res_no_ext.to_csv('wave_class_res.csv', index=False)
-
-# wave_class_res_w_ext = wave_class(data=fake_df, wave_lengths=fake_df["Lambda"], velocities=fake_df["Velocity"], return_extreme = True)
-
-# wave_class_res_w_ext.to_csv('wave_class_res_w_ext.csv', index=False)
-
-tres = wave_class(data=fake_df, wave_lengths=fake_df["Lambda"], velocities=fake_df["Velocity"], frequencies=fake_df["Frequency"], return_csv=True)
-print(tres) 
