@@ -2,7 +2,7 @@
 
 Neuromint is a project meant to serve as a simple library to be used for analysis and expirimentation in neuroscientific contexts. 
 
-###Wave Class
+### Wave Class
 The wave_class function currently takes several arguments: data, wave_lengths, velocities, frequencies, return_extreme, and return_csv. It is used to analyze EEG data metrics and classify wavelengths accordingly. 
 
 - data
