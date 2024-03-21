@@ -1,7 +1,4 @@
 # Neuromint
-
-Neuromint is a project meant to serve as a simple library to be used for analysis and expirimentation in neuroscientific contexts. 
-
 ### Wave Class
 
 wave_class(data=df, wave_lengths=df['wave_lengths'], velocities=df['velocities'], frequencies=df['frequencies'], return_extreme=True, return_csv=True)
